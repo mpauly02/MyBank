@@ -3,6 +3,7 @@ package com.example.michaelpauly.mybank;
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+    private static final String TAG = "MainActivity";
+    
     EditText amountInput;
     Button withdrawButton;
     Button depositButton;
@@ -24,6 +27,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.d(TAG, "Overdraft fee is " + BankAccount.overdraftFee);
         currentAccount = new BankAccount();
 
         amountInput = (EditText)findViewById(R.id.amount_input);

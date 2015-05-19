@@ -5,6 +5,7 @@ package com.example.michaelpauly.mybank;
  */
 public class BankAccount {
     private double balance;
+    public static final double overdraftFee = 30;
 
     public void withdraw(double amount){
         balance -= amount;
