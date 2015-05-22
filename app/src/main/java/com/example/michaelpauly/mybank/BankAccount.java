@@ -4,18 +4,22 @@ package com.example.michaelpauly.mybank;
  * Created by Michael on 5/15/2015.
  */
 public class BankAccount {
-    private double balance;
-    public static final double overdraftFee = 30;
+    private double mBalance;
+    public static final double OVERDRAFT_FEE = 30;
 
     public void withdraw(double amount){
-        balance -= amount;
+        mBalance -= amount;
+        if (mBalance < 0)
+        {
+            mBalance -= OVERDRAFT_FEE;
+        }
     }
 
     public void deposit(double amount){
-        balance += amount;
+        mBalance += amount;
     }
 
     public double getBalance() {
-        return balance;
+        return mBalance;
     }
 }
