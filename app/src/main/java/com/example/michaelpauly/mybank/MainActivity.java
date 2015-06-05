@@ -2,13 +2,15 @@ package com.example.michaelpauly.mybank;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.michaelpauly.accounts.BankAccount;
+import com.example.michaelpauly.accounts.SavingsAccount;
 
 
 public class MainActivity extends Activity {
@@ -26,8 +28,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d(TAG, "Overdraft fee is " + BankAccount.OVERDRAFT_FEE);
-        mCurrentAccount = new BankAccount();
+        mCurrentAccount = new SavingsAccount();
 
         mAmountInput = (EditText)findViewById(R.id.amount_input);
         mWithdrawButton =(Button)findViewById(R.id.withdraw_button);
